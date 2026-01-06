@@ -16,9 +16,11 @@
             "0 ≤ length of boxes ≤ 10⁴"
             ],
 
-            "sampleCode": "# definition of stack.\n# class Stack:\n#     def __init__(self, nums = None):\n#         self.nums = nums\n#     def pop(self):\n#         return the top item and remove it\n#     def push(self, val):\n#         add val on the top of the stack\n\nimport dataStructure as ds\n\ndef rev(a, b):\n    n = len(a.nums)\n    for i in range(n):\n        b.push(a.pop())\n\ndef removeBoxes(boxes, n: int):",
+            "sampleCode": "# definition of stack.\n# class Stack:\n#     def __init__(self, nums = None):\n#         self.nums = nums\n#     def pop(self):\n#         return the top item and remove it\n#     def push(self, val):\n#         add val on the top of the stack\n\ndef rev(a, b):\n    n = len(a.nums)\n    for i in range(n):\n        b.push(a.pop())\n\ndef removeBoxes(boxes, n: int):",
 
             "execName": "removeBoxes",
+
+            "hiddenCode": "from dataStructure import Stack\n\n",
             
             "examples": [
                 {
