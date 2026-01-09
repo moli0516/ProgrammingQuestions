@@ -20,6 +20,8 @@
 
             "sampleCode": "class CircularQueue:\n    def __init__(self, nums, n, start, end):\n        self.nums = nums\n        self.n = n\n        self.start = start\n        self.end = end\n    \n    def enq(self, k: int) -> None:\n        \"\"\"把整數 k 加入至隊列的末端\"\"\"\n        # TODO: 實現此函數\n        pass\n    \n    def deq(self) -> int:\n        \"\"\"把隊頭的元素移除，並重新設置start\"\"\"\n        # TODO: 實現此函數\n        pass\n    \n    def isEmpty(self) -> bool:\n        \"\"\"若隊伍為空，返回 True。若不是，返回 False\"\"\"\n        # TODO: 實現此函數\n        pass\n\n# 使用範例\nnums = [0, 0, 0, 0, 0]\nn = 5\nstart = 0\nend = 0\nqueue = CircularQueue(nums, n, start, end)\n\n# 測試操作\nqueue.enq(1)\nqueue.enq(2)\nqueue.enq(3)\nprint(queue.nums)  # 應該輸出 [1, 2, 3, 0, 0]\nprint(queue.deq())  # 應該輸出 1\nprint(queue.isEmpty())  # 應該輸出 False",
 
+            "hiddenSuffix": "\n    def __eq__(self, other):\n        return self.nums == other.nums and self.n == other.n and self.start == other.start and self.end == other.end\n",
+
             "className": "CircularQueue",
             
             "examples": [
