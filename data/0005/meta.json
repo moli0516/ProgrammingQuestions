@@ -1,0 +1,58 @@
+{
+    "problem": {
+        "id": "0004",
+        "slug": "circular-queue-implementation",
+        "title": "循環隊列實現",
+        "content": {
+            "description": "給定一個 <b>陣列</b>  <b>nums</b>，和三個整數 <b>n, start, end</b>，nums包含 <b>n</b> 個非負整數，start和end分別代表隊列的開始位置和隊尾位置。若nums[i] = 0，則該位置為空<br>樣本程式包含數個未完成的函數：<br><b> enq(k) </b> ：把整數 <b>k</b> 加入至隊列的末端。<br><b> deq() </b> ：把隊頭的元素移除，並重新設置start。<br><b> isEmpty() </b> ：若隊伍為空，返回 <b>True</b> 。 若不是，返回 <b>False</b><br><br>這是一個循環隊列的實現，需要處理隊列滿和隊列空的情況。",
+            
+            "input_format": "nums 表示<b>固定大小的陣列。</b><br>n 表示陣列的大小。<br>start 表示隊列開始位置的索引。<br>end 表示隊列結束位置的索引（指向下一個可插入位置）。<br><br>範例輸入：<br>nums = [0, 0, 0, 0, 0], n = 5, start = 0, end = 0",
+            
+            "output_format": "各個函數的操作結果：<br>- enq(k): 無返回值，修改陣列和 end<br>- deq(): 返回被移除的元素，修改 start<br>- isEmpty(): 返回布林值 (True/False)<br><br>範例輸出：<br>執行 enq(1), enq(2), enq(3) 後：nums = [1, 2, 3, 0, 0], start = 0, end = 3",
+            
+            "constraints": [
+                "1 ≤ n ≤ 1000",
+                "0 ≤ start, end < n",
+                "0 ≤ nums[i] ≤ 10⁴",
+                "nums[i] = 0 表示該位置為空",
+                "需實現循環隊列特性"
+            ],
+
+            "sampleCode": "class CircularQueue:\n    def __init__(self, nums, n, start, end):\n        self.nums = nums\n        self.n = n\n        self.start = start\n        self.end = end\n    \n    def enq(self, k: int) -> None:\n        \"\"\"把整數 k 加入至隊列的末端\"\"\"\n        # TODO: 實現此函數\n        pass\n    \n    def deq(self) -> int:\n        \"\"\"把隊頭的元素移除，並重新設置start\"\"\"\n        # TODO: 實現此函數\n        pass\n    \n    def isEmpty(self) -> bool:\n        \"\"\"若隊伍為空，返回 True。若不是，返回 False\"\"\"\n        # TODO: 實現此函數\n        pass\n\n# 使用範例\nnums = [0, 0, 0, 0, 0]\nn = 5\nstart = 0\nend = 0\nqueue = CircularQueue(nums, n, start, end)\n\n# 測試操作\nqueue.enq(1)\nqueue.enq(2)\nqueue.enq(3)\nprint(queue.nums)  # 應該輸出 [1, 2, 3, 0, 0]\nprint(queue.deq())  # 應該輸出 1\nprint(queue.isEmpty())  # 應該輸出 False",
+
+            "className": "CircularQueue",
+            
+            "examples": [
+                {
+                    "input": "初始化: nums = [0, 0, 0], n = 3, start = 0, end = 0\n操作: \n<pre><code>enq(1), enq(2), deq(), enq(3), deq()</pre></code>",
+                    "output": "最終 nums = [3, 0, 0], start = 2, end = 1",
+                    "explanation": "1. enq(1): [1, 0, 0], end=1\n2. enq(2): [1, 2, 0], end=2\n3. deq(): 返回1, [0, 2, 0], start=1\n4. enq(3): [0, 2, 3], end=0 (循環)\n5. deq(): 返回2, [0, 0, 3], start=2"
+                },
+                {
+                    "input": "初始化: nums = [0, 0], n = 2, start = 0, end = 0\n操作: \n<pre><code>enq(5), enq(7), isEmpty(), deq(), isEmpty()</pre></code>",
+                    "output": "isEmpty() = False, deq() = 5, isEmpty() = False",
+                    "explanation": "隊列滿時無法再入隊，需處理邊界條件"
+                },
+                {
+                    "input": "初始化: nums = [0, 0, 0, 0], n = 4, start = 0, end = 0\n操作:\n<pre><code> enq(10), enq(20), enq(30), enq(40), deq(), deq(), enq(50), enq(60)</pre></code>",
+                    "output": "最終 nums = [50, 60, 30, 40], start = 2, end = 2",
+                    "explanation": "展示循環隊列的特性"
+                }
+            ],
+            
+            "notes": [
+                "<b>循環隊列關鍵概念</b>：\n1. 隊列滿的判斷條件： (end + 1) % n == start\n2. 隊列空的判斷條件： start == end\n3. 入隊後更新 end: end = (end + 1) % n\n4. 出隊後更新 start: start = (start + 1) % n\n5. 保留一個空位以區分隊列滿和隊列空",
+                
+                "<b>實現步驟</b>：\n1. 實現 isEmpty(): 檢查 start == end\n2. 實現 enq(k): \n   - 檢查隊列是否已滿\n   - 將 k 放入 nums[end]\n   - 更新 end = (end + 1) % n\n3. 實現 deq(): \n   - 檢查隊列是否為空\n   - 保存 nums[start] 的值\n   - 將 nums[start] 設為 0（可選）\n   - 更新 start = (start + 1) % n\n   - 返回保存的值",
+                
+                "<b>時間與空間複雜度分析</b>：\n- 時間複雜度：O(1)，所有操作都是常數時間\n- 空間複雜度：O(n)，用於存儲隊列元素",
+                
+                "<b>常見錯誤</b>：\n1. 忘記處理隊列滿的情況\n2. 忘記處理隊列空的情況（出隊時）\n3. 錯誤判斷隊列滿和隊列空的條件\n4. 忘記使用模運算處理循環\n5. 沒有正確更新 start 和 end 指針",
+                
+                "<b>測試要點</b>：\n1. 測試隊列空時出隊\n2. 測試隊列滿時入隊\n3. 測試循環特性（指針繞回起始位置）\n4. 測試混合操作（入隊和出隊交替）\n5. 測試邊界條件（n=1的情況）",
+                
+                "<b>延伸思考</b>：\n1. 如果不保留一個空位，如何區分隊列滿和隊列空？\n2. 如何實現 peek() 函數查看隊頭元素但不移除？\n3. 如何實現 isFull() 函數檢查隊列是否已滿？\n4. 如果隊列元素可以是任意類型，如何修改實現？"
+            ]
+        }
+    }
+}
