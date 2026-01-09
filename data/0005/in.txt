@@ -1,5 +1,5 @@
 [
-    {'nums': [0, 0, 1, 2, 0], 'n': 5, 'start': 3, 'end': 4}, 
+    [{'nums': [0, 0, 1, 2, 0], 'n': 5, 'start': 2, 'end': 3}, 
     ['deq', 'enq', 'enq','deq', 'deq', 'deq', 'isEmpty'], 
-    [None, 3, 4, None, None, None, None]],
+    [None, 3, 4, None, None, None, None]]
 ]
