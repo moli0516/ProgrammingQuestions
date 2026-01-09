@@ -1,3 +1,226 @@
-[
-    [[None, None, None, None, None, None, True], {'nums': [0, 0, 0, 0, 0], 'n': 5, 'start': 1, 'end': 1}]
+output = [
+    # Test 1
+    [[1, None, None, 2, 3, 4, True], {'nums': [0, 0, 0, 0, 0], 'n': 5, 'start': 4, 'end': 4}],
+    
+    # Test 2
+    [[1, 2, None, None, False, None, 3, None], {'nums': [3, 4, 5, 6, 7], 'n': 5, 'start': 2, 'end': 5}],
+    
+    # Test 3
+    [[10, 20, 30, 40, 50, True, None, True], {'nums': [60, 0, 0, 0, 0], 'n': 5, 'start': 0, 'end': 1}],
+    
+    # Test 4
+    [[None, None, 1, None, None, 2, None, None, 3, True], {'nums': [4, 5, 6, 0, 0], 'n': 5, 'start': 3, 'end': 5}],
+    
+    # Test 5
+    [[100, None, 200, None, None, 300, None, False, None], {'nums': [400, 500, 600, 700, 0], 'n': 5, 'start': 3, 'end': 5}],
+    
+    # Test 6
+    [[None, None, 10, None, False, None, 20, None, 30, None, 40, None, False], {'nums': [50, 60, 70, 0, 0, 0, 0, 0], 'n': 8, 'start': 3, 'end': 5}],
+    
+    # Test 7
+    [[9999, None, None, False, None, 1, 2, None, True], {'nums': [3, 4, 0, 0], 'n': 4, 'start': 3, 'end': 4}],
+    
+    # Test 8
+    [[None, 10, None, False, 20, None, 30, None, False, 40], {'nums': [0, 0, 0], 'n': 3, 'start': 0, 'end': 0}],
+    
+    # Test 9
+    [[5000, 6000, 7000, True, None, None, 8000, None, True], {'nums': [9000, 10000, 0, 0], 'n': 4, 'start': 2, 'end': 4}],
+    
+    # Test 10
+    [[None, True, None, 1, None, 2, None, False, 3, None, 4, True], {'nums': [5, 0, 0, 0, 0, 0], 'n': 6, 'start': 1, 'end': 1}],
+    
+    # Test 11
+    [[42, None, None, 1, None, 2, False, None, 3, 4, True], {'nums': [5, 0, 0, 0, 0], 'n': 5, 'start': 4, 'end': 5}],
+    
+    # Test 12
+    [[None, None, False, 100, None, 200, None, False, 300, None, 400, None, True], {'nums': [500, 600, 0, 0, 0, 0, 0], 'n': 7, 'start': 5, 'end': 7}],
+    
+    # Test 13
+    [[1234, 5678, True, None, None, 999, None, False, 888, None], {'nums': [777, 666, 0, 0], 'n': 4, 'start': 2, 'end': 4}],
+    
+    # Test 14
+    [[None, 1, None, 2, None, False, None, 3, None, 4, None, 5, False, 6], {'nums': [7, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 9, 'start': 7, 'end': 8}],
+    
+    # Test 15
+    [[255, 511, None, False, 1023, None, None, 2047, None, True, 4095], {'nums': [8191, 16383, 0, 0, 0, 0], 'n': 6, 'start': 2, 'end': 4}],
+    
+    # Test 16
+    [[None, True, None, 1, None, 2, None, False, None, 3, None, 4, None, True], {'nums': [5, 6, 7, 0, 0, 0, 0, 0, 0, 0], 'n': 10, 'start': 7, 'end': 10}],
+    
+    # Test 17
+    [[7777, None, 8888, None, False, 9999, None, None, 1111, None, 2222, True], {'nums': [3333, 4444, 5555, 0, 0, 0, 0], 'n': 7, 'start': 3, 'end': 6}],
+    
+    # Test 18
+    [[None, None, 10, False, None, 20, None, None, 30, None, False, 40, None, 50, None], {'nums': [60, 70, 80, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 12, 'start': 9, 'end': 12}],
+    
+    # Test 19
+    [[1500, 2500, None, 3500, None, False, 4500, None, 5500, None, True, None], {'nums': [6500, 7500, 8500, 9500, 0, 0], 'n': 6, 'start': 4, 'end': 6}],
+    
+    # Test 20
+    [[None, True, None, False, 1, None, 2, None, False, 3, None, 4, None, 5, False], {'nums': [6, 0, 0, 0, 0, 0, 0, 0], 'n': 8, 'start': 6, 'end': 7}],
+    
+    # Test 21
+    [[111, 222, 333, 444, 555, True, None, None, 666, None, 777, None, False, 888], {'nums': [999, 0, 0, 0, 0, 0, 0, 0], 'n': 8, 'start': 7, 'end': 8}],
+    
+    # Test 22
+    [[None, 1, False, None, None, 2, None, False, 3, None, 4, None, 5, None, True], {'nums': [6, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 15, 'start': 7, 'end': 8}],
+    
+    # Test 23
+    [[321, 654, None, False, None, 987, None, None, 123, True, None, 456, None, False], {'nums': [789, 101, 202, 303, 0, 0, 0, 0], 'n': 8, 'start': 4, 'end': 8}],
+    
+    # Test 24
+    [[None, None, 1, None, None, 2, False, None, 3, None, 4, None, 5, False, 6], {'nums': [7, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 10, 'start': 7, 'end': 10}],
+    
+    # Test 25
+    [[999, 888, 777, None, 666, None, False, 555, None, 444, None, None, 333, True], {'nums': [222, 111, 0, -1, 0, 0, 0, 0, 0, 0], 'n': 10, 'start': 7, 'end': 10}],
+    
+    # Test 26
+    [[None, 1, True, None, None, 2, None, 3, False, 4, None, True], {'nums': [5, 0, 0], 'n': 3, 'start': 1, 'end': 1}],
+    
+    # Test 27
+    [[50, 60, 70, 80, 90, True, None, 100, None, True, None, 110, None], {'nums': [120, 130, 0, 0, 0], 'n': 5, 'start': 2, 'end': 5}],
+    
+    # Test 28
+    [[None, True, None, 10, None, False, 20, None, 30, None, False, 40, None], {'nums': [50, 60, 0, 0, 0, 0], 'n': 6, 'start': 5, 'end': 6}],
+    
+    # Test 29
+    [[None, None, 1, None, False, 2, None, None, 3, True, None, 4, None, 5, None, True], {'nums': [6, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 12, 'start': 8, 'end': 12}],
+    
+    # Test 30
+    [[None, 1, True, None, 2, True, None, 3, True], {'nums': [0], 'n': 1, 'start': 0, 'end': 0}],
+    
+    # Test 31
+    [[1000, 1000, True, 1000, 1000, 1000, True, None, None, 2000, None, 2001, None, True], {'nums': [2002, 2003, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 10, 'start': 4, 'end': 6}],
+    
+    # Test 32
+    [[None, None, 10, False, None, 20, None, None, 30, None, False, 40, None, 50, None, True], {'nums': [60, 70, 80, 0, 0, 0, 0, 0, 0], 'n': 9, 'start': 6, 'end': 9}],
+    
+    # Test 33
+    [[None, True, None, False, 1, None, True, 2, None, 3, None, True, 4, None, False], {'nums': [5, 6, 0, 0, 0, 0, 0], 'n': 7, 'start': 5, 'end': 7}],
+    
+    # Test 34
+    [[42, 73, None, True, None, 19, None, 100, None, True, None, 200], {'nums': [300, 400, 500, 0, 0, 0], 'n': 6, 'start': 3, 'end': 6}],
+    
+    # Test 35
+    [[None, None, 1, None, False, 2, None, 3, None, False, None, 4, None, 5, False], {'nums': [6, 7, 0, 0, 0, 0, 0, 0], 'n': 8, 'start': 6, 'end': 8}],
+    
+    # Test 36
+    [[None, 36, False, None, None, 186, True, None, None, 386, True, None, None, 586, True, None, None, 786, True, None], {'nums': [1636, 986, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 21, 'start': 19, 'end': 21}],
+    
+    # Test 37
+    [[None, 37, False, None, None, 187, True, None, None, 387, True, None, None, 587, True, None, None, 787, True, None], {'nums': [1637, 987, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 22, 'start': 20, 'end': 22}],
+    
+    # Test 38
+    [[None, 38, False, None, None, 188, True, None, None, 388, True, None, None, 588, True, None, None, 788, True, None], {'nums': [1638, 988, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 23, 'start': 21, 'end': 23}],
+    
+    # Test 39
+    [[None, 39, False, None, None, 189, True, None, None, 389, True, None, None, 589, True, None, None, 789, True, None], {'nums': [1639, 989, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 24, 'start': 22, 'end': 24}],
+    
+    # Test 40
+    [[None, 40, True, None, None, 190, True, None, None, 390, None, 440], {'nums': [840, 0, 0, 0, 0], 'n': 5, 'start': 4, 'end': 5}],
+    
+    # Test 41
+    [[None, 41, True, None, None, 191, True, None, None, 391, True, None], {'nums': [841, 591, 0, 0, 0, 0], 'n': 6, 'start': 5, 'end': 6}],
+    
+    # Test 42
+    [[None, 42, True, None, None, 192, True, None, None, 392, True, None, None, 592, None], {'nums': [842, 1242, 0, 0, 0, 0, 0], 'n': 7, 'start': 6, 'end': 7}],
+    
+    # Test 43
+    [[None, 43, True, None, None, 193, True, None, None, 393, True, None, None, 593, True, None], {'nums': [843, 1243, 793, 0, 0, 0, 0, 0], 'n': 8, 'start': 7, 'end': 8}],
+    
+    # Test 44
+    [[None, 44, True, None, None, 194, True, None, None, 394, True, None, None, 594, True, None, None, 794, None], {'nums': [844, 1244, 1644, 0, 0, 0, 0, 0, 0], 'n': 9, 'start': 8, 'end': 9}],
+    
+    # Test 45
+    [[None, 45, True, None, None, 195, True, None, None, 395, True, None, None, 595, True, None, None, 795, True, None], {'nums': [845, 1245, 1645, 995, 0, 0, 0, 0, 0, 0], 'n': 10, 'start': 9, 'end': 10}],
+    
+    # Test 46
+    [[None, 46, True, None, None, 196, True, None, None, 396, True, None, None, 596, True, None, None, 796, True, None], {'nums': [846, 1246, 1646, 996, 0, 0, 0, 0, 0, 0, 0], 'n': 11, 'start': 10, 'end': 11}],
+    
+    # Test 47
+    [[None, 47, True, None, None, 197, True, None, None, 397, True, None, None, 597, True, None, None, 797, True, None], {'nums': [847, 1247, 1647, 997, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 12, 'start': 11, 'end': 12}],
+    
+    # Test 48
+    [[None, 48, True, None, None, 198, True, None, None, 398, True, None, None, 598, True, None, None, 798, True, None], {'nums': [848, 1248, 1648, 998, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 13, 'start': 12, 'end': 13}],
+    
+    # Test 49
+    [[None, 49, True, None, None, 199, True, None, None, 399, True, None, None, 599, True, None, None, 799, True, None], {'nums': [849, 1249, 1649, 999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 14, 'start': 13, 'end': 14}],
+    
+    # Test 50
+    [[None, 50, True, None, None, 200, True, None, None, 400, True, None, None, 600, True, None, None, 800, True, None], {'nums': [850, 1250, 1650, 1000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 15, 'start': 14, 'end': 15}],
+    
+    # Test 51
+    [[None, 51, True, None, None, 201, True, None, None, 401, True, None, None, 601, True, None, None, 801, True, None], {'nums': [851, 1251, 1651, 1001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 16, 'start': 15, 'end': 16}],
+    
+    # Test 52
+    [[None, 52, True, None, None, 202, True, None, None, 402, True, None, None, 602, True, None, None, 802, True, None], {'nums': [852, 1252, 1652, 1002, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 17, 'start': 16, 'end': 17}],
+    
+    # Test 53
+    [[None, 53, True, None, None, 203, True, None, None, 403, True, None, None, 603, True, None, None, 803, True, None], {'nums': [853, 1253, 1653, 1003, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 18, 'start': 17, 'end': 18}],
+    
+    # Test 54
+    [[None, 54, True, None, None, 204, True, None, None, 404, True, None, None, 604, True, None, None, 804, True, None], {'nums': [854, 1254, 1654, 1004, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 19, 'start': 18, 'end': 19}],
+    
+    # Test 55
+    [[None, 55, True, None, None, 205, True, None, None, 405, True, None, None, 605, True, None, None, 805, True, None], {'nums': [855, 1255, 1655, 1005, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 20, 'start': 19, 'end': 20}],
+    
+    # Test 56
+    [[None, 56, True, None, None, 206, True, None, None, 406, True, None, None, 606, True, None, None, 806, True, None], {'nums': [856, 1256, 1656, 1006, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 21, 'start': 20, 'end': 21}],
+    
+    # Test 57
+    [[None, 57, True, None, None, 207, True, None, None, 407, True, None, None, 607, True, None, None, 807, True, None], {'nums': [857, 1257, 1657, 1007, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 22, 'start': 21, 'end': 22}],
+    
+    # Test 58
+    [[None, 58, True, None, None, 208, True, None, None, 408, True, None, None, 608, True, None, None, 808, True, None], {'nums': [858, 1258, 1658, 1008, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 23, 'start': 22, 'end': 23}],
+    
+    # Test 59
+    [[None, 59, True, None, None, 209, True, None, None, 409, True, None, None, 609, True, None, None, 809, True, None], {'nums': [859, 1259, 1659, 1009, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 24, 'start': 23, 'end': 24}],
+    
+    # Test 60
+    [[None, 60, True, None, None, 210, True, None, None, 410, None, 460], {'nums': [860, 0, 0, 0, 0], 'n': 5, 'start': 4, 'end': 5}],
+    
+    # Test 61
+    [[None, 61, True, None, None, 211, True, None, None, 411, True, None], {'nums': [861, 611, 0, 0, 0, 0], 'n': 6, 'start': 5, 'end': 6}],
+    
+    # Test 62
+    [[None, 62, True, None, None, 212, True, None, None, 412, True, None, None, 612, None], {'nums': [862, 1262, 0, 0, 0, 0, 0], 'n': 7, 'start': 6, 'end': 7}],
+    
+    # Test 63
+    [[None, 63, True, None, None, 213, True, None, None, 413, True, None, None, 613, True, None], {'nums': [863, 1263, 813, 0, 0, 0, 0, 0], 'n': 8, 'start': 7, 'end': 8}],
+    
+    # Test 64
+    [[None, 64, True, None, None, 214, True, None, None, 414, True, None, None, 614, True, None, None, 814, None], {'nums': [864, 1264, 1664, 0, 0, 0, 0, 0, 0], 'n': 9, 'start': 8, 'end': 9}],
+    
+    # Test 65
+    [[None, 65, True, None, None, 215, True, None, None, 415, True, None, None, 615, True, None, None, 815, True, None], {'nums': [865, 1265, 1665, 1015, 0, 0, 0, 0, 0, 0], 'n': 10, 'start': 9, 'end': 10}],
+    
+    # Test 66
+    [[None, 66, True, None, None, 216, True, None, None, 416, True, None, None, 616, True, None, None, 816, True, None], {'nums': [866, 1266, 1666, 1016, 0, 0, 0, 0, 0, 0, 0], 'n': 11, 'start': 10, 'end': 11}],
+    
+    # Test 67
+    [[None, 67, True, None, None, 217, True, None, None, 417, True, None, None, 617, True, None, None, 817, True, None], {'nums': [867, 1267, 1667, 1017, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 12, 'start': 11, 'end': 12}],
+    
+    # Test 68
+    [[None, 68, True, None, None, 218, True, None, None, 418, True, None, None, 618, True, None, None, 818, True, None], {'nums': [868, 1268, 1668, 1018, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 13, 'start': 12, 'end': 13}],
+    
+    # Test 69
+    [[None, 69, True, None, None, 219, True, None, None, 419, True, None, None, 619, True, None, None, 819, True, None], {'nums': [869, 1269, 1669, 1019, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 14, 'start': 13, 'end': 14}],
+    
+    # Test 70
+    [[None, 70, True, None, None, 220, True, None, None, 420, True, None, None, 620, True, None, None, 820, True, None], {'nums': [870, 1270, 1670, 1020, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 15, 'start': 14, 'end': 15}],
+    
+    # Test 71
+    [[None, 71, True, None, None, 221, True, None, None, 421, True, None, None, 621, True, None, None, 821, True, None], {'nums': [871, 1271, 1671, 1021, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 16, 'start': 15, 'end': 16}],
+    
+    # Test 72
+    [[None, 72, True, None, None, 222, True, None, None, 422, True, None, None, 622, True, None, None, 822, True, None], {'nums': [872, 1272, 1672, 1022, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 17, 'start': 16, 'end': 17}],
+    
+    # Test 73
+    [[None, 73, True, None, None, 223, True, None, None, 423, True, None, None, 623, True, None, None, 823, True, None], {'nums': [873, 1273, 1673, 1023, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 18, 'start': 17, 'end': 18}],
+    
+    # Test 74
+    [[None, 74, True, None, None, 224, True, None, None, 424, True, None, None, 624, True, None, None, 824, True, None], {'nums': [874, 1274, 1674, 1024, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 19, 'start': 18, 'end': 19}],
+    
+    # Test 75
+    [[None, 75, True, None, None, 225, True, None, None, 425, True, None, None, 625, True, None, None, 825, True, None], {'nums': [875, 1275, 1675, 1025, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'n': 20, 'start': 19, 'end': 20}]
 ]
