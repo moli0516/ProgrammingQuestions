@@ -549,13 +549,14 @@ for i in range(100, 200):
     
     # Create a unique pattern for each test
     for j in range(random.randint(100,500)):  # Vary number of operations
-        if j % 4 == 0:
+        nigga = random.randint(1,4)
+        if nigga % 4 == 0:
             operations.append('enq')
             args.append(j * 100 + i)  # Unique value
-        elif j % 4 == 1:
+        elif nigga % 4 == 1:
             operations.append('deq')
             args.append(None)
-        elif j % 4 == 2:
+        elif nigga % 4 == 2:
             operations.append('isEmpty')
             args.append(None)
         else:
