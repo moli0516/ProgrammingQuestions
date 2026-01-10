@@ -2,14 +2,14 @@ import random
 test_cases = [
     # Test 1: Basic operations
     [
-        {'nums': [0, 0, 1, 2, 0], 'n': 5, 'start': 2, 'end': 3},
+        {'nums': [0, 0, 1, 2, 0], 'n': 5, 'start': 2, 'end': 4},
         ['deq', 'enq', 'enq', 'deq', 'deq', 'deq', 'isEmpty'],
         [None, 3, 4, None, None, None, None]
     ],
     
     # Test 2: Mixed operations with wrap-around
     [
-        {'nums': [1, 2, 3, 0, 0], 'n': 5, 'start': 0, 'end': 2},
+        {'nums': [1, 2, 3, 0, 0], 'n': 5, 'start': 0, 'end': 3},
         ['deq', 'deq', 'enq', 'enq', 'isEmpty', 'enq', 'deq', 'enq'],
         [None, None, 4, 5, None, 6, None, 7]
     ],
@@ -23,7 +23,7 @@ test_cases = [
     
     # Test 4: Complex mixed pattern
     [
-        {'nums': [100, 200, 0, 0, 0], 'n': 5, 'start': 0, 'end': 1},
+        {'nums': [100, 200, 0, 0, 0], 'n': 5, 'start': 0, 'end': 2},
         ['deq', 'enq', 'deq', 'enq', 'enq', 'deq', 'enq', 'isEmpty', 'enq'],
         [None, 300, None, 400, 500, None, 600, None, 700]
     ],
@@ -93,7 +93,7 @@ test_cases = [
     
     # Test 14: Random mixed values
     [
-        {'nums': [42, 73, 19, 0, 0, 0], 'n': 6, 'start': 0, 'end': 2},
+        {'nums': [42, 73, 19, 0, 0, 0], 'n': 6, 'start': 0, 'end': 3},
         ['deq', 'deq', 'enq', 'isEmpty', 'enq', 'deq', 'enq', 'deq', 'enq', 'isEmpty', 'enq', 'deq'],
         [None, None, 100, None, 200, None, 300, None, 400, None, 500, None]
     ],
