@@ -548,7 +548,7 @@ for i in range(100, 200):
     args = []
     
     # Create a unique pattern for each test
-    for j in range(min(20, n * 2)):  # Vary number of operations
+    for j in range(random.randint(100,500)):  # Vary number of operations
         if j % 4 == 0:
             operations.append('enq')
             args.append(j * 100 + i)  # Unique value
