@@ -6,11 +6,15 @@ class CircularQueue:
         self.end = end
 
     def enq(self, k: int) -> None:
+        if self.nums[self.end] != 0:
+            return None
         self.nums[self.end] = k
         self.end = (self.end + 1) % self.n
         return None
 
     def deq(self) -> int:
+        if self.nums[self.start] == 0:
+            return -1
         val = self.nums[self.start]
         self.nums[self.start] = 0
         self.start = (self.start + 1) % self.n
